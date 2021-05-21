@@ -8,9 +8,9 @@ import {Switch, Route} from 'react-router-dom'
 export default function App() {
   return(
   <Switch>
-    <Route path='/' exact render={<Getaways {...routerProps}/>}/>
-    <Route path='/users/signIn' exact render={<UserSignIn {...routerProps}/>} />
-    <Route path='/users/signUp' exact render={<UserSignUp{...reouterProps} />} />
+    <Route path='/' exact render={(routerProps) => <Getaways {...routerProps}/>}/>
+    <Route path='/user/signIn' exact render={(routerProps) => <UserSignIn {...routerProps}/>} />
+    <Route path='/user/signUp' exact render={(routerProps) => <UserSignUp {...routerProps} />} />
   </Switch>
 
   ) 

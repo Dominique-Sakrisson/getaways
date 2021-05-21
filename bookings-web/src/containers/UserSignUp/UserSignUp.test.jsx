@@ -1,11 +1,18 @@
 import React from 'react'
-import {screen, render} from '@testing-library/react'
 import UserSignUp from './UserSignUp'
+import {screen, render, fireEvent} from '@testing-library/react'
+import {MemoryRouter} from 'react-router-dom'
 
 describe('Tests the UserSignUp page', () => {
     it('Displays a form to collect new user information', () => {
-        render(<UserSignUp />)
+        render(
+            <MemoryRouter initialEntries={['/user/signUp']}>
+                <UserSignUp />
+            </MemoryRouter>
+        )
         const form = screen.getByRole('form', {name: 'userSignUp'});
         const button = screen.getByRole('button', {name: 'submitSignUp'});
+        fireEvent.click(screen.getByText('Sign Up'));
+        fireEvent.click(screen.getByText('Sign Up'));
     })
 })
