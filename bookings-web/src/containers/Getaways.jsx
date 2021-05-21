@@ -10,7 +10,7 @@ const Getaways = () => {
     getPlaces().then(setPlaces).finally(setTimeout(() => {
       setLoading(false);
     }, 500));
-  }, [places]);
+  }, []);
 
   if(loading) return <h1>loading.....</h1>;
   return <PlaceList places={places} loading={loading}/>;
