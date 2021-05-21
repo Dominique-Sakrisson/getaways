@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Place from './Place';
 
-const PlaceList = ({ places }) => {
+const PlaceList = ({ places, loading }) => {
+  if(loading) return <h1>loading...</h1>
   return places.map((place) => <Place key={place.id} {...place} />);
 };
 
