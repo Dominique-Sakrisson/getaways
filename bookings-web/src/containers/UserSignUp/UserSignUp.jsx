@@ -1,7 +1,9 @@
 import React from 'react'
 
 const UserSignUp = () => {
-    return <h1>hello</h1>
+    return <form aria-label='userSignUp'>
+        <button aria-label='submitSignUp'></button>
+    </form>
 }
 
 export default UserSignUp;

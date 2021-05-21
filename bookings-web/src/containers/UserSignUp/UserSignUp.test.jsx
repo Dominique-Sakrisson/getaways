@@ -6,5 +6,6 @@ describe('Tests the UserSignUp page', () => {
     it('Displays a form to collect new user information', () => {
         render(<UserSignUp />)
         const form = screen.getByRole('form', {name: 'userSignUp'});
+        const button = screen.getByRole('button', {name: 'submitSignUp'});
     })
 })

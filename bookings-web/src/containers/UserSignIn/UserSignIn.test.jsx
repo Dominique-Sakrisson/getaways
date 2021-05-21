@@ -7,6 +7,6 @@ describe('UserSignIn page', () => {
         render(<UserSignIn />)
 
         const form = screen.getByRole('form', {name: 'userSignIn'});
-        const button = screen.getByRole('button', {name: 'submit'});
+        const button = screen.getByRole('button', {name: 'submitSignIn'});
     })
 })
