@@ -1,5 +1,5 @@
 import React from 'react';
-import Getaways from '../../containers/Getaways';
+import Getaways from '../../containers/Getaways/Getaways';
 import UserAccess from '../../containers/UserAccess/UserAccess'
 import {Switch, Route} from 'react-router-dom'
 

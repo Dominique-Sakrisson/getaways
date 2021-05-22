@@ -14,7 +14,7 @@ const Place = ({
   wifi,
 }) => {
   return (
-    <ul>
+    <ul aria-label='placeList'>
       <li>{name}</li>
       <li>{description}</li>
       <li>{location}</li>
