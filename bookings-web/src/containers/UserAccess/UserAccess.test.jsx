@@ -1,10 +1,21 @@
 import React from 'react'
-import UserSignUp from './UserSignUp'
 import {screen, render, fireEvent} from '@testing-library/react'
-import {MemoryRouter, Route} from 'react-router-dom'
 import App from '../../components/app/App'
+import {MemoryRouter, Route} from 'react-router-dom'
 
-describe('Tests the UserSignUp page', () => {
+describe('Testing the UserAccess Page', () => {
+    it('Displays a form to collect users email and password', () => {
+        render(
+        <MemoryRouter initialEntries={['/user/SignIn']}>
+            <App />
+            <Route path ='user/:action' />
+        </MemoryRouter>
+        )
+
+        const form = screen.getByRole('form', {name: 'userSignIn'});
+        const button = screen.getByRole('button', {name: 'submitSignIn'});
+    })
+
     it('Displays a form to collect new user information', () => {
         render(
             <MemoryRouter initialEntries={['/user/SignUp']}>
