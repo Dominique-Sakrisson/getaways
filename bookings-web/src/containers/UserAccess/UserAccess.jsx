@@ -14,9 +14,6 @@ const UserAccess = () => {
     }
 
     return <Action action={action} onClick={handleClick}/>
-    // <form aria-label='userSignUp'>
-    //     <button onClick={handleClick} aria-label='submitSignUp'>Sign Up</button>
-    // </form>
 }
 
 export default UserAccess;

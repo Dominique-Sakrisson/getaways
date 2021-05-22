@@ -1,0 +1,16 @@
+.userActionForm {
+    display: grid;
+    text-align: center;
+    background-color: grey;
+    padding: 20px;
+    color: white;
+    font-size: 1.3rem;
+    width: 50%;
+    margin:  50px auto;
+}
+
+.userActionForm button, input{
+    padding: 5px;
+    margin: 5px;
+}
+
