@@ -1,34 +1,38 @@
 import React from 'react'
 import styles from '../styles/styles.css'
 
-export function userFormChoice(action, onClick) {
+export function userFormChoice(action, onSubmit, handleEmailChange, handlePasswordChange, handleConfirmChange, handleUsernameChange) {
     switch(action) {
         case 'SignUp' : {
             return (
-                <form className={styles.userActionForm} aria-label={`user${action}`}>
+                <form onSubmit={onSubmit} className={styles.userActionForm} aria-label={`user${action}`}>
                     <label>
                         {action} Form
                     </label><br/>
                     <label>
-                        Username/ email
-                        <input />
+                        Email
+                        <input type='email' onChange={handleEmailChange}/>
+                    </label><br/>
+                    <label>
+                        Username
+                        <input type='text' onChange={handleUsernameChange}/>
                     </label><br/>
                     <label>
                         Password
-                        <input />
+                        <input type='password' onChange={handlePasswordChange}/>
                     </label><br/>
                     <label>
                         Confirm Password
-                        <input />
+                        <input type='password' onChange={handleConfirmChange}/>
                     </label><br/>
-                    <button onClick={onClick} aria-label={`submit${action}`}>Sign Up</button>
+                    <button  aria-label={`submit${action}`}>Sign Up</button>
                 </form>
             )
             break;
         }
         case 'SignIn' : {
             return (
-                <form className={styles.userActionForm} aria-label={`user${action}`}>
+                <form onSubmit={onSubmit} className={styles.userActionForm} aria-label={`user${action}`}>
                     <label>
                         {action} Form
                     </label><br/>
@@ -41,7 +45,7 @@ export function userFormChoice(action, onClick) {
                         <input />
                     </label><br/>
 
-                    <button onClick={onClick} aria-label={`submit${action}`}>Sign In</button>
+                    <button aria-label={`submit${action}`}>Sign In</button>
                 </form>
             )
             break;
@@ -53,4 +57,18 @@ export function userFormChoice(action, onClick) {
     }
 }
 
+export async function signUpUser(email, password, username){
+    const submit = await fetch('http://localhost:7890/api/v1/users/create',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: {
+            email,
+            password,
+            username
+        }
+    })
+    const json = await submit.json();
+}
 

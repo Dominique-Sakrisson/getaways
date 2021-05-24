@@ -10,7 +10,7 @@ import Data from './__snapshot__/snapshot.json'
 const data = Data;
 const server = setupServer(
     rest.get('http://localhost:7890/api/v1/places', (req,res,ctx) => {
-        return res(ctx.json({data}));
+        return res(ctx.json(data));
     })
 );
 

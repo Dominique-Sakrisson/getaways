@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
 import { getPlaces } from '../../services/placesApi';
 import PlaceList from '../../components/places/PlaceList';
-import Header from '../../components/header/Header'
-import styles from '../../styles/styles.css'
+import Header from '../../components/header/Header';
+import styles from '../../styles/styles.css';
+
 const Getaways = () => {
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,7 +20,9 @@ const Getaways = () => {
   <>
     <Header/> 
     <div className={styles.listContainer}> 
+    
       <PlaceList places={places} loading={loading}/>;
+    
 
     </div>
   </>
