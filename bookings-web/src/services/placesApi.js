@@ -3,6 +3,7 @@ export const getPlaces = async () => {
   const response = await fetch(`http://localhost:7890/api/v1/places`);
   if (response.ok) {
     const {data} = await response.json();
+    
     return data.map(
       ({
         price_per_night,

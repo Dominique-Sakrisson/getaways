@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getPlaces } from '../../services/placesApi';
 import PlaceList from '../../components/places/PlaceList';
 import Header from '../../components/header/Header'
-
+import styles from '../../styles/styles.css'
 const Getaways = () => {
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,7 +17,10 @@ const Getaways = () => {
   return (
   <>
     <Header/> 
-    <PlaceList places={places} loading={loading}/>;
+    <div className={styles.listContainer}> 
+      <PlaceList places={places} loading={loading}/>;
+
+    </div>
   </>
   )
 };

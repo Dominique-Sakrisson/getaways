@@ -4,13 +4,12 @@ import Action from '../../components/users/Action'
 
 const UserAccess = () => {
     const {action} = useParams();
-    console.log(action)
     const [number, countNumber] = useState(0);
 
     const handleClick= (e) => {
         e.preventDefault();
+        console.log(e);
         countNumber(number + 1);
-        console.log(number);
     }
 
     return <Action action={action} onClick={handleClick}/>
