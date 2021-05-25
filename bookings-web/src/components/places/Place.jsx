@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../styles/styles.css'
 
 const Place = ({
   name,
@@ -14,18 +15,18 @@ const Place = ({
   wifi,
 }) => {
   return (
-    <ul>
-      <li>{name}</li>
-      <li>{description}</li>
-      <li>{location}</li>
-      <li>{pricePerNight}</li>
-      <li>{image}</li>
-      <li>{imageThumbnail}</li>
-      <li>{maxGuests}</li>
-      <li>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
-      {pool ? <li>Has a Pool!</li> : null}
-      {wifi ? <li>Free Wifi</li> : null}
-    </ul>
+      <ul className={styles.getawayItem} aria-label='placeList'>
+        <li className={styles.name}><h1>{name}</h1></li>
+        <li className={styles.description}>{description}</li>
+        <li className={styles.location}>{location}</li>
+        <li className={styles.pricePN}>${pricePerNight} <span className={styles.perNightSpan}>per night</span></li>
+        <li><img src={image} className={styles.image} alt={image}/></li>
+        <li><img src={imageThumbnail} className={styles.thumbnail} alt={imageThumbnail} /></li>
+        <li className={styles.maxGuests}>maximum guest policy: {maxGuests}</li>
+        <li className={styles.pets}>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
+        {pool ? <li className={styles.pool}>Has a Pool!</li> : null}
+        {wifi ? <li className={styles.wifi}>Free Wifi</li> : null}
+      </ul>
   );
 };
 

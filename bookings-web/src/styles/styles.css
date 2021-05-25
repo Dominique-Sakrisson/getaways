@@ -1,0 +1,64 @@
+.userActionForm {
+    display: grid;
+    text-align: center;
+    background-color: grey;
+    padding: 20px;
+    color: white;
+    font-size: 1.3rem;
+    width: 50%;
+    margin:  50px auto;
+}
+
+.userActionForm button, input{
+    padding: 5px;
+    margin: 5px;
+}
+
+.listContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+.getawayItem{
+    list-style: none;
+    justify-content: space-between;
+    border: 5px  solid;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    width: 40%;
+    margin: 10px;
+}
+
+.getawayItem ul {
+    
+}
+.getawayItem li{
+ 
+}
+
+.name{
+    text-transform: capitalize;
+}
+.description{
+    color: grey;
+    font-size: 1.2rem;
+}
+.location{
+    font-style: italic;
+}
+.pricePN{
+    border: grey 2px solid;
+    width: 40%;
+}
+.perNightSpan{
+    opacity: .6;
+    margin-left: 5px;
+}
+.image{
+    max-width: 40%;
+}
+.thumbnail{ 
+    max-width: 40%;
+}
+.maxGuests{}
+.pets{}
+.pool{}
+.wifi{}

@@ -7,8 +7,8 @@ const ONE_DAY_IN_MS = 1000 * 60 * 60 * 24;
 
 module.exports = Router()
   .post('/create', async (req, res, next) => {
+    
     const password = bcrypt.hashSync(req.body.password, 10);
-
     try {
       const user = await User.create({
         username: req.body.username,
